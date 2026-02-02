@@ -14,6 +14,7 @@
 ## 1) Environment Setup
 - **APIs configured:**
   - Google Gemini (GEMINI_API_KEY): Configured.
+  - Pexels (PIXEL_API_KEY / PEXELS_API_KEY): Configured for stock video fallback.
   - AIMLAPI (AIMLAPI_KEY): Configured.
 - **Issues encountered:**
   - AIMLAPI Key requires account verification (credit card) for MiniMax usage.

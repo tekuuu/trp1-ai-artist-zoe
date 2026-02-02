@@ -37,6 +37,9 @@ Create `.env` file:
 # Google APIs (Lyria, Veo, Imagen)
 GEMINI_API_KEY=your_google_api_key
 
+# Pexels (stock video fallback)
+PIXEL_API_KEY=your_pexels_api_key
+
 # AIMLAPI (MiniMax)
 AIMLAPI_KEY=your_aimlapi_key
 
