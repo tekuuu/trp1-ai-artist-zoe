@@ -97,7 +97,8 @@
 - **Generated audio (Electronic):** [output/music/electronic_track.wav](output/music/electronic_track.wav)
 - **Video source (Pexels ~30s):** [output/video/pexels_nature_30s.mp4](output/video/pexels_nature_30s.mp4)
 - **Pexels attribution metadata:** [output/video/pexels_nature_30s.mp4.json](output/video/pexels_nature_30s.mp4.json)
-- **GitHub repo:** _Local Workspace_
+- **YouTube link(s):** https://youtu.be/RZ1yZWrvVqw
+- **GitHub repo:** https://github.com/tekuuu/trp1-ai-artist-zoe
 
 ## 7) Exploration Artifacts
 - [exploration/ARCHITECTURE.md](exploration/ARCHITECTURE.md)
