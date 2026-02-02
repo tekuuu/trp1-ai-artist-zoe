@@ -160,8 +160,16 @@ class MiniMaxMusicProvider:
         return state.lower() in ("completed", "done", "success")
 
     def _extract_audio_url(self, status: dict) -> str | None:
-        """Extract audio URL from status response."""
-        # Try different response formats
+        """Extract audio URL from status response.
+
+        AIMLAPI music-2.0 returns: {"audio_file": {"url": "..."}}
+        """
+        # music-2.0 format (per docs)
+        if "audio_file" in status:
+            audio_file = status["audio_file"]
+            if isinstance(audio_file, dict):
+                return audio_file.get("url")
+        # Try other common formats
         if "audio_url" in status:
             return status["audio_url"]
         if "url" in status:
