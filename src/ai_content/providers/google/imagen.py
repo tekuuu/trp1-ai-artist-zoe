@@ -84,7 +84,7 @@ class GoogleImagenProvider:
         client = self._get_client()
 
         model = (
-            self.settings.image_gemini_model
+            self.settings.image_fast_model  # Fallback to fast model potentially?
             if use_gemini
             else self.settings.image_model
         )

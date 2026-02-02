@@ -69,6 +69,11 @@ def music(
         None, "--reference-url", "-r", help="Reference audio URL for style transfer (MiniMax only)"
     ),
     output: Optional[Path] = typer.Option(None, "--output", "-o", help="Output file"),
+    temperature: float = typer.Option(
+        1.0,
+        "--temperature",
+        help="Sampling temperature (lower = more stable/clean, higher = more varied)",
+    ),
     force: bool = typer.Option(
         False, "--force", "-f", help="Force generation even if duplicate exists"
     ),
@@ -81,6 +86,7 @@ def music(
             style=style,
             duration=duration,
             bpm=bpm,
+            temperature=temperature,
             lyrics_file=lyrics,
             reference_url=reference_url,
             output=output,
@@ -95,6 +101,7 @@ async def _generate_music(
     style: Optional[str],
     duration: int,
     bpm: int,
+    temperature: float,
     lyrics_file: Optional[Path],
     reference_url: Optional[str],
     output: Optional[Path],
@@ -176,6 +183,8 @@ async def _generate_music(
         cmd_parts.extend(["--reference-url", reference_url])
     if output:
         cmd_parts.extend(["--output", str(output)])
+    if temperature != 1.0:
+        cmd_parts.extend(["--temperature", str(temperature)])
     command_str = " ".join(cmd_parts)
 
     # Generate
@@ -186,6 +195,7 @@ async def _generate_music(
         lyrics=lyrics,
         reference_audio_url=reference_url,
         output_path=str(output) if output else None,
+        temperature=temperature,
     )
 
     # Track job if we got a generation ID

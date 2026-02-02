@@ -1,0 +1,27 @@
+{
+  "index": 0,
+  "page": 1,
+  "query": "nature landscape",
+  "selected_file": {
+    "file_type": "video/mp4",
+    "fps": 29.97,
+    "height": 1080,
+    "link": "https://videos.pexels.com/video-files/15155443/15155443-hd_1920_1080_30fps.mp4",
+    "quality": "hd",
+    "width": 1920
+  },
+  "source": "pexels",
+  "type": "video",
+  "video": {
+    "duration": 31,
+    "height": 1080,
+    "id": 15155443,
+    "url": "https://www.pexels.com/video/eagle-s-eye-view-an-aerial-exploration-of-the-zdibsky-forest-and-the-vltava-river-15155443/",
+    "user": {
+      "id": 98931829,
+      "name": "Ji\u0159\u00ed Mal\u00fd",
+      "url": "https://www.pexels.com/@jiri-maly-98931829"
+    },
+    "width": 1920
+  }
+}

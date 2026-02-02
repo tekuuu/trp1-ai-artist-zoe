@@ -192,7 +192,19 @@ class GoogleLyriaProvider:
             file_path = output_dir / f"lyria_{timestamp}.wav"
 
         file_path.parent.mkdir(parents=True, exist_ok=True)
-        file_path.write_bytes(audio_data)
+        
+        # Write valid WAV file
+        import wave
+        try:
+            with wave.open(str(file_path), "wb") as wav_file:
+                wav_file.setnchannels(2)  # Stereo
+                wav_file.setsampwidth(2)  # 16-bit
+                wav_file.setframerate(44100)  # 44.1kHz
+                wav_file.writeframes(audio_data)
+        except Exception as e:
+            logger.error(f"Failed to write WAV header: {e}")
+            # Fallback to raw writing if wave module fails
+            file_path.write_bytes(audio_data)
 
         logger.info(f"✅ Lyria: Saved to {file_path}")
 
